@@ -584,3 +584,70 @@ footer p { color: var(--ink-soft); margin: 0 0 14px; font-size: 14.5px; }
   .commission-big { font-size: 42px; }
   .final-cta, .laayoune-section { border-radius: 16px; padding: 48px 20px; }
 }
+
+/* ===== BOUTON WHATSAPP FLOTTANT ===== */
+.wa-float {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  border-radius: 999px;
+  padding: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease, padding .25s ease;
+  border: 1px solid rgba(92,122,94,0.15);
+}
+
+.wa-float:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.22);
+}
+
+.wa-float-bubble {
+  font-family: var(--sans);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+  max-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-width .3s ease, opacity .25s ease, margin .3s ease;
+}
+
+.wa-float:hover .wa-float-bubble {
+  max-width: 160px;
+  opacity: 1;
+  margin-left: 4px;
+}
+
+.wa-float--peek .wa-float-bubble {
+  max-width: 160px;
+  opacity: 1;
+  margin-left: 4px;
+}
+
+@media (max-width: 640px) {
+  .wa-float {
+    bottom: 16px;
+    right: 16px;
+    padding: 11px;
+  }
+}
+
+html[lang="ary"] .wa-float,
+body[dir="rtl"] .wa-float {
+  right: auto;
+  left: 22px;
+}
+
+html[lang="ary"] .wa-float-bubble,
+body[dir="rtl"] .wa-float-bubble {
+  margin-left: 0;
+  margin-right: 4px;
+}
